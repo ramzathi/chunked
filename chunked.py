@@ -10,3 +10,7 @@ def chunks(items: list[T], size: int) -> list[list[T]]:
     if size < 1:
         raise ValueError("每段至少 1 个")
     return [items[i : i + size] for i in range(0, len(items), size)]
+
+
+def chunk_count(items: list[T], size: int) -> int:
+    return len(chunks(items, size))
