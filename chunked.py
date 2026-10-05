@@ -22,3 +22,11 @@ def remainder(items: list[T], size: int) -> int:
 
 def chunk_count(items: list[T], size: int) -> int:
     return len(chunks(items, size))
+
+
+def last_short(items: list[T], size: int) -> bool:
+    if size < 1:
+        raise ValueError("每段至少 1 个")
+    if not items:
+        return False
+    return len(items) % size != 0
