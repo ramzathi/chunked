@@ -1,6 +1,6 @@
 import unittest
 
-from chunked import chunk_count, chunks, last_short, remainder
+from chunked import chunk_count, chunks, full_count, last_short, remainder
 
 
 class ChunkedTest(unittest.TestCase):
@@ -15,6 +15,8 @@ class ChunkedTest(unittest.TestCase):
         self.assertTrue(last_short([1, 2, 3], 2))
         self.assertFalse(last_short([1, 2, 3, 4], 2))
         self.assertFalse(last_short([], 2))
+        self.assertEqual(full_count([1, 2, 3, 4, 5], 2), 2)
+        self.assertEqual(full_count([], 2), 0)
 
 
 if __name__ == "__main__":
