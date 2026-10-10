@@ -34,3 +34,10 @@ def last_short(items: list[T], size: int) -> bool:
 
 def full_count(items: list[T], size: int) -> int:
     return sum(1 for piece in chunks(items, size) if len(piece) == size)
+
+
+def tail(items: list[T], size: int) -> list[T]:
+    pieces = chunks(items, size)
+    if not pieces:
+        return []
+    return pieces[-1]
