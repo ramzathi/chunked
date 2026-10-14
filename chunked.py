@@ -48,3 +48,11 @@ def head(items: list[T], size: int) -> list[T]:
     if not pieces:
         return []
     return pieces[0]
+
+
+def even(items: list[T], size: int) -> bool:
+    if size < 1:
+        raise ValueError("每段至少 1 个")
+    if not items:
+        return True
+    return len(items) % size == 0
