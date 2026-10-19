@@ -56,3 +56,7 @@ def even(items: list[T], size: int) -> bool:
     if not items:
         return True
     return len(items) % size == 0
+
+
+def short_count(items: list[T], size: int) -> int:
+    return sum(1 for piece in chunks(items, size) if len(piece) < size)
