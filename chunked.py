@@ -60,3 +60,10 @@ def even(items: list[T], size: int) -> bool:
 
 def short_count(items: list[T], size: int) -> int:
     return sum(1 for piece in chunks(items, size) if len(piece) < size)
+
+
+def piece_at(items: list[T], size: int, index: int) -> list[T]:
+    pieces = chunks(items, size)
+    if index < 0 or index >= len(pieces):
+        return []
+    return pieces[index]
