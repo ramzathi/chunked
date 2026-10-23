@@ -67,3 +67,7 @@ def piece_at(items: list[T], size: int, index: int) -> list[T]:
     if index < 0 or index >= len(pieces):
         return []
     return pieces[index]
+
+
+def piece_len(items: list[T], size: int, index: int) -> int:
+    return len(piece_at(items, size, index))
