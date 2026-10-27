@@ -1,6 +1,6 @@
 import unittest
 
-from chunked import chunk_count, chunks, even, full_count, head, last_short, piece_at, piece_len, remainder, short_count, tail
+from chunked import chunk_count, chunks, even, full_count, head, last_len, last_short, piece_at, piece_len, remainder, short_count, tail
 
 
 class ChunkedTest(unittest.TestCase):
@@ -29,6 +29,8 @@ class ChunkedTest(unittest.TestCase):
         self.assertEqual(piece_at([1, 2, 3, 4, 5], 2, 9), [])
         self.assertEqual(piece_len([1, 2, 3, 4, 5], 2, 0), 2)
         self.assertEqual(piece_len([1, 2, 3, 4, 5], 2, 9), 0)
+        self.assertEqual(last_len([1, 2, 3, 4, 5], 2), 1)
+        self.assertEqual(last_len([1, 2, 3, 4], 2), 2)
 
 
 if __name__ == "__main__":
