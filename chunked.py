@@ -71,3 +71,10 @@ def piece_at(items: list[T], size: int, index: int) -> list[T]:
 
 def piece_len(items: list[T], size: int, index: int) -> int:
     return len(piece_at(items, size, index))
+
+
+def last_len(items: list[T], size: int) -> int:
+    pieces = chunks(items, size)
+    if not pieces:
+        return 0
+    return len(pieces[-1])
