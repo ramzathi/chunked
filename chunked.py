@@ -78,3 +78,6 @@ def last_len(items: list[T], size: int) -> int:
     if not pieces:
         return 0
     return len(pieces[-1])
+
+def full_last(items: list[T], size: int) -> bool:
+    return bool(items) and last_len(items, size) == size
