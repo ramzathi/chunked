@@ -81,3 +81,7 @@ def last_len(items: list[T], size: int) -> int:
 
 def full_last(items: list[T], size: int) -> bool:
     return bool(items) and last_len(items, size) == size
+
+def short_last(items: list[T], size: int) -> bool:
+    got = last_len(items, size)
+    return 0 < got < size
